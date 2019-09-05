@@ -1,0 +1,46 @@
+{
+  "name": "rwa",
+  "version": "1.0.0",
+  "description": "Retby web application",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "webpack --watch --mode development",
+    "start-dev": "nodemon --watch dist --ignore dist/assets/ dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Juan Carlos Labrandero",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonfile": "^5.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link-context": "^1.0.18",
+    "apollo-link-http": "^1.5.15",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^3.1.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "react-apollo": "^2.5.8",
+    "react-router-dom": "^5.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
