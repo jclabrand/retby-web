@@ -11,6 +11,8 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
+import Loader from '../components/loader/loader';
+
 import ErrorCast from '../gears/error-cast';
 
 /****************************************************************************************/
@@ -43,20 +45,19 @@ class Main extends React.Component {
 			<Query query={this.query.bearer} variables={{ trace: this.bearerTrace() }} errorPolicy="all">
 				{({ loading, error, data }) => {
 
-					if(loading) return (<div>LOADING...</div>);
+					if(loading) return (<Loader size='20rem' modal={true}/>);
 					if(error) return (<div>ERROR: {ErrorCast.messageFromGraphQLError(error)}</div>);
 
 					return (
 						<Query query={this.query.user} context={{bearer: data.bearer}} errorPolicy="all">
 							{({ loading, error, data }) => {
-								if(loading) return (<div>LOADING...</div>);
+								if(loading) return (<Loader size='20rem' modal={true}/>);
 								if(error) return (<div>ERROR: {ErrorCast.messageFromGraphQLError(error)}</div>);
 
 								window.user = data.user;
 
 								return (
 									<div className="workspace">
-										WORKSPACE
 									</div>
 								);
 							}}
